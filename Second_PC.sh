@@ -13,7 +13,7 @@ apt-get -y install make gcc git libncurses5-dev
 cd $pendrive
 echo "Start linux kernel source downloading."
 git clone --depth 1 git://github.com/raspberrypi/linux.git
-cp $pendrive/.config $pendrive/linux
+mv $pendrive/.config $pendrive/linux/
 echo "Linux kernel source was downloaded."
 echo "Configuration file (.config) was copied to linux kernel source."
 echo "Start tools downloading and installing."
