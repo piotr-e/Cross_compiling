@@ -12,13 +12,13 @@ read cores
 apt-get -y install make gcc git libncurses5-dev
 cd $pendrive
 echo "Start linux kernel source downloading."
-git clone --depth 1 git://github.com/raspberrypi/linux.git
+git clone git://github.com/raspberrypi/linux.git
 mv $pendrive/.config $pendrive/linux/
 echo "Linux kernel source was downloaded."
 echo "Configuration file (.config) was copied to linux kernel source."
 echo "Start tools downloading and installing."
 cd /usr/src
-git clone --depth 1 git://github.com/raspberrypi/tools.git
+git clone git://github.com/raspberrypi/tools.git
 apt-get -y install gcc-arm-linux-gnueabihf
 apt-get -y install ia32-libs
 echo "Tools was downloaded and installed."
