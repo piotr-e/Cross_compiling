@@ -40,7 +40,7 @@ cd /usr/src/tools/mkimage
 cp kernel.img $pendrive
 echo "Kernel file (kernel.img) copied to pendrive."
 echo "Modules are copying to pendrive, it may takes long time."
-mv -r /usr/src/linux $pendrive
+mv /usr/src/linux $pendrive
 echo "Modules copyied to pendrive. :-)"
 echo "Cleaning."
 rm -r /raspbian
