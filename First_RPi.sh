@@ -13,6 +13,7 @@ echo "Firmware updated."
 zcat /proc/config.gz > $pendrive/.config
 echo "Config file copied to pendrive."
 apt-get install -y make gcc libncurses5-dev
+echo "Old linux source is removing."
 rm -r $pendrive/linux
 echo "Old linux source removed."
 echo "Necessary tools are dowloading."
