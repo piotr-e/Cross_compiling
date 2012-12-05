@@ -39,8 +39,9 @@ cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
 cp kernel.img $pendrive
 echo "Kernel file (kernel.img) copied to pendrive."
-echo "Modules are copying to pendrive, it may takes long time."
+echo -n "Modules are copying to pendrive, it may takes long time"
 mv /usr/src/linux $pendrive
+echo ", done. :-)"
 echo "Modules copyied to pendrive. :-)"
 echo "Cleaning."
 rm -r /raspbian
