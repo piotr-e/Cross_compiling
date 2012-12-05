@@ -8,8 +8,8 @@ read pendrive
 echo "Give my number of cores, which you want to use for compilation:"
 read cores
 apt-get -y install make gcc git libncurses5-dev
-cd $pendrive
-echo "Start linux kernel source downloading."
+cd /usr/src
+echo "Start linux kernel source downloading, it may takes several minutes."
 git clone --depth 1 git://github.com/raspberrypi/linux.git
 mv $pendrive/.config $pendrive/linux/
 echo "Linux kernel source downloaded."
@@ -39,6 +39,9 @@ cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
 cp kernel.img $pendrive
 echo "Kernel file (kernel.img) copied to pendrive."
+echo "Modules are copying to pendrive, it may takes long time."
+mv -r /usr/src/linux $pendrive
+echo "Modules copyied to pendrive. :-)"
 echo "Cleaning."
 rm -r /raspbian
 rm -r /usr/src/tools
