@@ -13,29 +13,32 @@ echo "Start linux kernel source downloading."
 git clone --depth 1 git://github.com/raspberrypi/linux.git
 mv $pendrive/.config $pendrive/linux/
 echo "Linux kernel source downloaded."
-echo "Configuration file (.config) was copied to linux kernel source."
+echo "Configuration file (.config) copied to linux kernel source."
 echo "Start tools downloading and installing."
 cd /usr/src
 git clone --depth 1 git://github.com/raspberrypi/tools.git
 apt-get -y install gcc-arm-linux-gnueabihf
 apt-get -y install ia32-libs
 echo "Tools downloaded and installed."
+echo "Cross-Compilator is installing."
 cd tools/arm-bcm2708
 cp -r arm-bcm2708hardfp-linux-gnueabi /
 cd /
 mv arm-bcm2708hardfp-linux-gnueabi raspbian
-echo "Cross-Compilator was installed."
+echo "Cross-Compilator installed."
+echo "Kernel is compilling."
 cd $pendrive/linux
 make ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
 make -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
 echo "Kernel compiled."
+echo "Modules are compilling."
 make modules -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
 echo "Modules compiled."
 echo "Kernel is preparating for use."
 cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
 cp kernel.img $pendrive
-echo "Kernel file (kernel.img) was copied to pendrive."
+echo "Kernel file (kernel.img) copied to pendrive."
 echo "Cleaning."
 rm -r /raspbian
 rm -r /usr/src/tools
