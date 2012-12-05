@@ -11,7 +11,6 @@ apt-get -y install make gcc git libncurses5-dev
 cd /usr/src
 echo "Start linux kernel source downloading, it may takes several minutes."
 git clone --depth 1 git://github.com/raspberrypi/linux.git
-mv $pendrive/.config $pendrive/linux/
 echo "Linux kernel source downloaded."
 echo "Configuration file (.config) copied to linux kernel source."
 echo "Start tools downloading and installing."
@@ -20,12 +19,12 @@ git clone --depth 1 git://github.com/raspberrypi/tools.git
 apt-get -y install gcc-arm-linux-gnueabihf
 apt-get -y install ia32-libs
 echo "Tools downloaded and installed."
-echo "Cross-Compilator is installing."
+echo "Cross-Compiler is installing."
 cd tools/arm-bcm2708
 cp -r arm-bcm2708hardfp-linux-gnueabi /
 cd /
 mv arm-bcm2708hardfp-linux-gnueabi raspbian
-echo "Cross-Compilator installed."
+echo "Cross-Compiler installed."
 echo "Kernel is compilling."
 cd $pendrive/linux
 make ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
