@@ -26,7 +26,7 @@ cd /
 mv arm-bcm2708hardfp-linux-gnueabi raspbian
 echo "Cross-Compiler installed."
 echo "Kernel is compilling."
-cd $pendrive/linux
+cd /usr/src/linux
 make ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
 make -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
 echo "Kernel compiled."
