@@ -42,7 +42,6 @@ echo "Kernel file (kernel.img) copied to pendrive."
 echo -n "Modules are copying to pendrive, it may takes long time"
 mv /usr/src/linux $pendrive
 echo ", done. :-)"
-echo "Modules copyied to pendrive. :-)"
 echo "Cleaning."
 rm -r /raspbian
 rm -r /usr/src/tools
