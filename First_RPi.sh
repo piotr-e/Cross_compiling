@@ -7,18 +7,19 @@ read pendrive
 cd /usr/src
 git clone --depth 1 git://github.com/raspberrypi/firmware.git
 cd firmware/boot
-cp fixup.dat bootcode.bin loader.bin start.elf start_cd.elf fixup_cd.dat kernel_cutdown.img kernel_emergency.img /boot/
-echo "Firmware was updated."
+cp fixup.dat bootcode.bin start.elf start_cd.elf fixup_cd.dat kernel_cutdown.img kernel_emergency.img /boot/
+echo "Firmware updated."
 zcat /proc/config.gz > $pendrive/.config
-echo "Config file was copied to pendrive."
+echo "Config file copied to pendrive."
 apt-get install -y make gcc libncurses5-dev
 rm -r $pendrive/linux
-echo "Old linux source was removed."
+echo "Old linux source removed."
 git clone --depth 1 git://github.com/raspberrypi/tools.git
 cd tools/arm-bcm2708
 echo "Cross-Compiler is preparing."
 cp -r arm-bcm2708hardfp-linux-gnueabi /
 cd /
+echo "Cross-Compiler prepared."
 mv arm-bcm2708hardfp-linux-gnueabi cross
 echo "Cleaning."
 rm -r /usr/src/tools
