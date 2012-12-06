@@ -8,7 +8,10 @@ read pendrive
 cp $pendrive/kernel.img /boot/
 echo "Kernel file (kernel.img) installed."
 echo "Start linux kernel files copying to Raspbian, it may takes several minutes."
-cp -r $pendrive/linux /usr/src/
+cp $pendrive/linux.tar.gz /usr/src/
+cd /usr/src
+tar -xzf linux.tar.gz
+rm linux.tar.gz
 echo "Kernel linux files copied to Raspbian."
 cd /usr/src/linux
 echo "Modules are installing."
