@@ -12,7 +12,7 @@ cd /usr/src
 echo "Start linux kernel source downloading, it may takes several minutes."
 git clone --depth 1 git://github.com/raspberrypi/linux.git
 echo "Linux kernel source downloaded."
-cp $pendrive /usr/src/linux/
+cp $pendrive/.config /usr/src/linux/
 echo "Configuration file (.config) copied to linux kernel source."
 echo "Start tools downloading and installing."
 cd /usr/src
