@@ -17,6 +17,7 @@ echo "Old linux source is removing."
 rm -r $pendrive/linux
 echo "Old linux source removed."
 echo "Necessary tools are dowloading."
+cd /usr/src
 git clone --depth 1 git://github.com/raspberrypi/tools.git
 cd tools/arm-bcm2708
 echo "Necessary tools downloaded."
