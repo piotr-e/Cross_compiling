@@ -31,9 +31,9 @@ cd /usr/src/linux
 make ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
 make -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
 echo "Kernel compiled."
-echo "Modules are compilling."
+# echo "Modules are compilling."
 # make modules -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
-echo "Modules compiled."
+# echo "Modules compiled."
 echo "Kernel is preparating for use."
 cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
