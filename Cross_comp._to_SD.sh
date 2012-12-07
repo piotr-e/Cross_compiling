@@ -3,8 +3,8 @@
 echo " "
 echo "Hello $USER."
 echo "This is script, which it prepares PC to cross compiling of Raspbian kernel."
-echo "Plug in SD card to PC."
-echo "Give my full path to SD card with Raspbian file system:"
+echo "Plug in your Raspbian SD card to PC."
+echo "Give my full path direct to Raspbian file system:"
 read sd_card
 cd /usr/src
 git clone --depth git://github.com/raspberrypi/linux.git
