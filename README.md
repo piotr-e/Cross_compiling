@@ -1,7 +1,7 @@
 cross_compile
 =============
 
-There are three scripts for cross compilation of Raspbian kernel on PC computer.
+There are three scripts for cross compilation of Raspbian kernel on PC computer for Ubuntu and its family.
 
 First_RPi.sh is script for first run on Raspberry Pi after plug in pendrive. This script prepare Raspian for kernel
 cross compilation and it copies .config file to the pendrive.   
