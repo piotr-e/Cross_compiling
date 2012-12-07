@@ -13,7 +13,7 @@ read sd_card_boot
 echo "Give my number of cores which it want to use:"
 read cores
 cd /usr/src
-git clone --depth git://github.com/raspberrypi/linux.git
+git clone --depth 1 git://github.com/raspberrypi/linux.git
 zcat $sd_card_root/proc/config.gz > /usr/src/linux/.config
 apt-get install -y make gcc libncurses5-dev
 apt-get -y install gcc-arm-linux-gnueabihf
