@@ -1,4 +1,4 @@
-Cros compiling direct to SD of Raspbian
+Cross compiling direct to SD of Raspbian
 =======================================
 
 
