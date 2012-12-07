@@ -29,6 +29,7 @@ make -j"$cores" -k ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-
 make -j"$cores" -k ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
 cd /usr/src
 mkdir modules
+cd /usr/src/linux
 make ARCH=arm CROSS_COMPILE=/cross/bin/arm-bcm2708hardfp-linux-gnueabi- modules_install INSTALL_MOD_PATH=/usr/src/modules
 cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
