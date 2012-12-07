@@ -1,5 +1,5 @@
-Direct to SD
-=============
+Cros compiling direct to SD of Raspbian
+=======================================
 
 
 
