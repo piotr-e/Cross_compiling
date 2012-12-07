@@ -1,5 +1,5 @@
-Cross compiling through pendrive.
-==================================
+Cross compiling through pendrive for Raspberry Pi.
+==================================================
 
 There are three scripts for cross compilation of Raspbian kernel on PC computer for Ubuntu and its family.
 
