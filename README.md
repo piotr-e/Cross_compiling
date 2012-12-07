@@ -1,5 +1,5 @@
-cross_compile
-=============
+Cross compiling through pendrive.
+==================================
 
 There are three scripts for cross compilation of Raspbian kernel on PC computer for Ubuntu and its family.
 
