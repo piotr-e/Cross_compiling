@@ -15,7 +15,7 @@ rm linux.tar.gz
 echo "Kernel linux files copied to Raspbian."
 cd /usr/src/linux
 echo "Modules are installing."
-make ARCH=arm CROSS_COMPILE=/cross/bin/arm-bcm2708hardfp-linux-gnueabi- modules_install INSTALL_MOD_PATH=/
+make ARCH=arm CROSS_COMPILE=/cross/bin/arm-linux-gnueabihf- modules_install INSTALL_MOD_PATH=/
 echo "Modules installed."
 echo "Done."
 echo "Kernel and modules installed."
