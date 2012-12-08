@@ -22,17 +22,17 @@ apt-get -y install ia32-libs
 echo "Tools downloaded and installed."
 echo "Cross-Compiler is installing."
 cd tools/arm-bcm2708
-cp -r arm-bcm2708hardfp-linux-gnueabi /
+cp -r gcc-linaro-arm-linux-gnueabihf-raspbian /
 cd /
-mv arm-bcm2708hardfp-linux-gnueabi cross
+mv gcc-linaro-arm-linux-gnueabihf-raspbian cross
 echo "Cross-Compiler installed."
 echo "Kernel is compilling."
 cd /usr/src/linux
-make ARCH=arm CROSS_COMPILE=/cross/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
-make -j"$cores" ARCH=arm CROSS_COMPILE=/cross/bin/arm-bcm2708hardfp-linux-gnueabi-
+make ARCH=arm CROSS_COMPILE=/cross/bin/arm-linux-gnueabihf- menuconfig
+make -j"$cores" ARCH=arm CROSS_COMPILE=/cross/bin/arm-linux-gnueabihf-
 echo "Kernel compiled."
 echo "Modules are compilling."
-make modules -j"$cores" ARCH=arm CROSS_COMPILE=/cross/bin/arm-bcm2708hardfp-linux-gnueabi-
+make modules -j"$cores" ARCH=arm CROSS_COMPILE=/cross/bin/arm-linux-gnueabihf-
 echo "Modules compiled."
 echo "Kernel is preparating for use."
 cd /usr/src/tools/mkimage
