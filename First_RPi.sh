@@ -24,7 +24,7 @@ echo "Necessary tools downloaded."
 echo "Cross-Compiler is preparing."
 cp -r gcc-linaro-arm-linux-gnueabihf-raspbian /
 cd /
-mv arm-bcm2708hardfp-linux-gnueabi cross
+mv gcc-linaro-arm-linux-gnueabihf-raspbian cross
 echo "Cross-Compiler prepared."
 echo "Cleaning."
 rm -r /usr/src/tools
