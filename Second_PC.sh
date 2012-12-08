@@ -24,16 +24,16 @@ echo "Cross-Compiler is installing."
 cd tools/arm-bcm2708
 cp -r arm-bcm2708hardfp-linux-gnueabi /
 cd /
-mv arm-bcm2708hardfp-linux-gnueabi raspbian
+mv arm-bcm2708hardfp-linux-gnueabi cross
 echo "Cross-Compiler installed."
 echo "Kernel is compilling."
 cd /usr/src/linux
 make ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
 make -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
 echo "Kernel compiled."
-# echo "Modules are compilling."
-# make modules -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
-# echo "Modules compiled."
+echo "Modules are compilling."
+make modules -j"$cores" ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
+echo "Modules compiled."
 echo "Kernel is preparating for use."
 cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
@@ -44,7 +44,7 @@ cd /usr/src
 tar czfv $pendrive/linux.tar.gz linux/
 echo "Modules copied. :-)"
 echo "Cleaning."
-rm -r /raspbian
+rm -r /cross
 rm -r /usr/src/tools
 echo "Done."
 echo "You can install kernel and modules on Raspbian now."
