@@ -22,7 +22,7 @@ git clone --depth 1 git://github.com/raspberrypi/tools.git
 cd tools/arm-bcm2708
 echo "Necessary tools downloaded."
 echo "Cross-Compiler is preparing."
-cp -r arm-bcm2708hardfp-linux-gnueabi /
+cp -r gcc-linaro-arm-linux-gnueabihf-raspbian /
 cd /
 mv arm-bcm2708hardfp-linux-gnueabi cross
 echo "Cross-Compiler prepared."
