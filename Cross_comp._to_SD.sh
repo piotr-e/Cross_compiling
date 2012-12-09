@@ -39,7 +39,9 @@ rm -r $sd_card_root/lib/firmware
 rm -r $sd_card_root/lib/modules
 cp -r /usr/src/modules/lib/firmware $sd_card_root/lib/
 cp -r /usr/src/modules/lib/modules $sd_card_root/lib/
-#echo "Cleaning."
+cd /usr/src/
+tar czfz $sd_card_root/usr/src/linux.tar.gz linux/
+echo "Cleaning."
 rm -r /usr/src/modules
 rm -r /usr/src/tools
 echo "Done."
