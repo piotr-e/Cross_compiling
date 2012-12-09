@@ -8,7 +8,7 @@ echo "Give my full path direct to Raspbian file system partition:"
 read sd_card_root
 echo "Give my full path direct to Raspbian boot partition:"
 read sd_card_boot
-echo "Givemy path to .config file:"
+echo "Give my path to .config file:"
 read config_file
 echo "Give my number of cores which it wants to use:"
 read cores
