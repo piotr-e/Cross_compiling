@@ -1,5 +1,10 @@
 #!/bin/bash
-
+echo "\n"
+if [ "root" != $USER ]
+then
+echo "Hello &USER. \n You need root permission."
+exit 1
+fi
 echo "\n\nHello $USER."
 echo "This is script, which it prepares PC to cross compiling of Raspbian kernel."
 echo "Plug in your Raspbian SD card to PC and mount both partition of SD card."
