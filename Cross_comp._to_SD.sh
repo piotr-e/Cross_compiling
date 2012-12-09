@@ -4,26 +4,26 @@ echo " "
 echo "Hello $USER."
 echo "This is script, which it prepares PC to cross compiling of Raspbian kernel."
 echo "Plug in your Raspbian SD card to PC and mount both partition of SD card."
-#mount -t vfat /dev/sdb1 /media
-#mount -t ext4 /dev/sdb2 /mnt
 echo "Give my full path direct to Raspbian file system partition:"
 read sd_card_root
 echo "Give my full path direct to Raspbian boot partition:"
 read sd_card_boot
+echo "Givemy path to .config file:"
+read config_file
 echo "Give my number of cores which it want to use:"
 read cores
 cd /usr/src
 git clone --depth 1 git://github.com/raspberrypi/linux.git
-zcat $sd_card_root/proc/config.gz > /usr/src/linux/.config
+cp $config_file/.config linux/
 apt-get install -y make gcc libncurses5-dev
 apt-get -y install gcc-arm-linux-gnueabihf
 apt-get -y install ia32-libs
 cd /usr/src
-git clone --depth 1 git://github.com/raspberrypi/tools.git
-cd tools/arm-bcm2708
-cp -r arm-bcm2708hardfp-linux-gnueabi /
-cd /
-mv arm-bcm2708hardfp-linux-gnueabi raspbian
+#git clone --depth 1 git://github.com/raspberrypi/tools.git
+#cd tools/arm-bcm2708
+#cp -r arm-bcm2708hardfp-linux-gnueabi /
+#cd /
+#mv arm-bcm2708hardfp-linux-gnueabi raspbian
 cd /usr/src/linux
 make -j"$cores" -k ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
 make -j"$cores" -k ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
