@@ -18,7 +18,7 @@ cp $config_file/.config linux/
 apt-get install -y make gcc libncurses5-dev
 apt-get -y install gcc-arm-linux-gnueabihf
 apt-get -y install ia32-libs
-cd /usr/src
+#cd /usr/src
 #git clone --depth 1 git://github.com/raspberrypi/tools.git
 #cd tools/arm-bcm2708
 #cp -r arm-bcm2708hardfp-linux-gnueabi /
