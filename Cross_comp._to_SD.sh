@@ -38,5 +38,5 @@ rm -r $sd_card_root/lib/modules
 cp -r /usr/src/modules/firmware $sd_card_root/lib/
 cp -r /usr/src/modules/modules $sd_card_root/lib/
 echo "Done."
-echo "You can plug SD card to Raspberry Pi and running. "
+echo "You can plug in SD card to Raspberry Pi and running. "
 echo "Good luck."
