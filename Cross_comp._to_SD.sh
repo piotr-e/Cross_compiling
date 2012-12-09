@@ -23,12 +23,8 @@ cp $config_file/.config linux/
 apt-get install -y make gcc libncurses5-dev
 apt-get -y install gcc-arm-linux-gnueabihf
 apt-get -y install ia32-libs
-#cd /usr/src
-#git clone --depth 1 git://github.com/raspberrypi/tools.git
-#cd tools/arm-bcm2708
-#cp -r arm-bcm2708hardfp-linux-gnueabi /
-#cd /
-#mv arm-bcm2708hardfp-linux-gnueabi raspbian
+cd /usr/src
+git clone --depth 1 git://github.com/raspberrypi/tools.git
 cd /usr/src/linux
 make -j"$cores" -k ARCH=arm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- menuconfig
 make -j"$cores" -k ARCH=arm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
@@ -41,11 +37,11 @@ cd /usr/src/tools/mkimage
 cp kernel.img $sd_card_boot/
 rm -r $sd_card_root/lib/firmware
 rm -r $sd_card_root/lib/modules
-cp -r /usr/src/modules/firmware $sd_card_root/lib/
-cp -r /usr/src/modules/modules $sd_card_root/lib/
+cp -r /usr/src/modules/lib/firmware $sd_card_root/lib/
+cp -r /usr/src/modules/lib/modules $sd_card_root/lib/
 #echo "Cleaning."
-#rm -r /usr/src/linux
-#rm -r /usr/src/modules
+rm -r /usr/src/modules
+rm -r /usr/src/tools
 echo "Done."
 echo "You can plug in SD card to Raspberry Pi and running. "
 echo "Good luck."
