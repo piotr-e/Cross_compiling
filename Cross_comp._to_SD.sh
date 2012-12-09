@@ -10,7 +10,7 @@ echo "Give my full path direct to Raspbian boot partition:"
 read sd_card_boot
 echo "Givemy path to .config file:"
 read config_file
-echo "Give my number of cores which it want to use:"
+echo "Give my number of cores which it wants to use:"
 read cores
 cd /usr/src
 git clone --depth 1 git://github.com/raspberrypi/linux.git
