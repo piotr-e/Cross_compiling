@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "\n"
 if [ "root" != $USER ]
 then
