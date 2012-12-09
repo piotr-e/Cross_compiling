@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo " "
-echo "Hello $USER."
+echo "\n\nHello $USER."
 echo "This is script, which it prepares PC to cross compiling of Raspbian kernel."
 echo "Plug in your Raspbian SD card to PC and mount both partition of SD card."
 echo "Give my full path direct to Raspbian file system partition:"
