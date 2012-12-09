@@ -43,6 +43,9 @@ rm -r $sd_card_root/lib/firmware
 rm -r $sd_card_root/lib/modules
 cp -r /usr/src/modules/firmware $sd_card_root/lib/
 cp -r /usr/src/modules/modules $sd_card_root/lib/
+#echo "Cleaning."
+#rm -r /usr/src/linux
+#rm -r /usr/src/modules
 echo "Done."
 echo "You can plug in SD card to Raspberry Pi and running. "
 echo "Good luck."
