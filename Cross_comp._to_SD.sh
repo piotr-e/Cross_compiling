@@ -25,16 +25,19 @@ apt-get -y install ia32-libs
 #cd /
 #mv arm-bcm2708hardfp-linux-gnueabi raspbian
 cd /usr/src/linux
-make -j"$cores" -k ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi- menuconfig
-make -j"$cores" -k ARCH=arm CROSS_COMPILE=/raspbian/bin/arm-bcm2708hardfp-linux-gnueabi-
+make -j"$cores" -k ARCH=arm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- menuconfig
+make -j"$cores" -k ARCH=arm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
 cd /usr/src
 mkdir modules
 cd /usr/src/linux
-make ARCH=arm CROSS_COMPILE=/cross/bin/arm-bcm2708hardfp-linux-gnueabi- modules_install INSTALL_MOD_PATH=/usr/src/modules
+make ARCH=arm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf- modules_install INSTALL_MOD_PATH=/usr/src/modules
 cd /usr/src/tools/mkimage
 ./imagetool-uncompressed.py /usr/src/linux/arch/arm/boot/zImage
 cp kernel.img $sd_card_boot/
-
+rm -r $sd_card_root/lib/firmware
+rm -r $sd_card_root/lib/modules
+cp -r /usr/src/modules/firmware $sd_card_root/lib/
+cp -r /usr/src/modules/modules $sd_card_root/lib/
 echo "Done."
 echo "You can plug SD card to Raspberry Pi and running. "
 echo "Good luck."
