@@ -2,7 +2,7 @@
 echo "\n"
 if [ "root" != $USER ]
 then
-echo "Hello &USER. \n You need root permission."
+echo "Hello &USER.\nYou need root permission."
 exit 1
 fi
 echo "\n\nHello $USER."
