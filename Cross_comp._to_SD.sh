@@ -3,7 +3,7 @@
 echo "\n"
 if [ "root" != $USER ]
 then
-echo "Hello &USER.\nYou need root permission."
+echo "Witaj &USER.\nPotrzebujesz uprawnień administratora."
 exit 1
 fi
 echo "\n\nHello $USER."
