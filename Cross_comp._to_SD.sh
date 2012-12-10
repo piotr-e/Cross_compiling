@@ -7,7 +7,7 @@ echo "Witaj &USER.\nPotrzebujesz uprawnień administratora."
 exit 1
 fi
 echo "\n\nHello $USER."
-echo "This is script, which it prepares PC to cross compiling of Raspbian kernel."
+echo "To jest skrypt, który przygotowuje PC i kroskompiluje kernel Raspbian'a."
 echo "Plug in your Raspbian SD card to PC and mount both partition of SD card."
 echo "Give my full path direct to Raspbian file system partition:"
 read sd_card_root
