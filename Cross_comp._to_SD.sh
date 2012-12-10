@@ -9,13 +9,13 @@ fi
 echo "\n\nHello $USER."
 echo "To jest skrypt, który przygotowuje PC i kroskompiluje kernel Raspbian'a."
 echo "Podlacz swoja karte SD do PC'ta i zamontuj obie partycje, startowa i systemowa."
-echo "Give my full path direct to Raspbian file system partition:"
+echo "Podaj pelna sciezke dostepu do systemu plikow:"
 read sd_card_root
-echo "Give my full path direct to Raspbian boot partition:"
+echo "Podaj pelna sciezke dostepu do partycji startowej:"
 read sd_card_boot
-echo "Give my path to .config file:"
+echo "Podaj sciezke dostepu do pliku .config:"
 read config_file
-echo "Give my number of cores which you want to use:"
+echo "Podaj liczbe rdzeni procesora, które chcesz uzyc do kompilacji:"
 read cores
 cd /usr/src
 git clone --depth 1 git://github.com/raspberrypi/linux.git
