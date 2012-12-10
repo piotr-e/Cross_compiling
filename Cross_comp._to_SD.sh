@@ -6,7 +6,7 @@ then
 echo "Witaj &USER.\nPotrzebujesz uprawnień administratora."
 exit 1
 fi
-echo "\n\nHello $USER."
+echo "\n\nWitaj $USER."
 echo "To jest skrypt, który przygotowuje PC i kroskompiluje kernel Raspbian'a."
 echo "Podlacz swoja karte SD do PC'ta i zamontuj obie partycje, startowa i systemowa."
 echo "Podaj pelna sciezke dostepu do systemu plikow:"
@@ -41,9 +41,10 @@ cp -r /usr/src/modules/lib/firmware $sd_card_root/lib/
 cp -r /usr/src/modules/lib/modules $sd_card_root/lib/
 cd /usr/src/
 tar czfz $sd_card_root/usr/src/linux.tar.gz linux/
-echo "Cleaning."
+echo "Czyszczenie."
 rm -r /usr/src/modules
 rm -r /usr/src/tools
-echo "Done."
-echo "You can plug in SD card to Raspberry Pi and running. "
-echo "Good luck."
+re -r /usr/src/linux
+echo "Zrobione."
+echo "Możesz podlaczyc swoja karte SD do Raspberry Pi i uruchomić. "
+echo "Powodzenia."
