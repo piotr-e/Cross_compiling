@@ -44,7 +44,7 @@ tar czfz $sd_card_root/usr/src/linux.tar.gz linux/
 echo "Czyszczenie."
 rm -r /usr/src/modules
 rm -r /usr/src/tools
-re -r /usr/src/linux
+rm -r /usr/src/linux
 echo "Zrobione."
 echo "Możesz podlaczyc swoja karte SD do Raspberry Pi i uruchomić. "
 echo "Powodzenia."
