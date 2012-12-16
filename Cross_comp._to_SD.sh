@@ -44,6 +44,7 @@ tar czfz $sd_card_root/usr/src/linux.tar.gz linux/
 echo "Cleaning."
 rm -r /usr/src/modules
 rm -r /usr/src/tools
+rm -r /usr/src/linux
 echo "Done."
 echo "You can plug in SD card to Raspberry Pi and running. "
 echo "Good luck."
